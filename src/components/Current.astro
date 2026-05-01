@@ -8,10 +8,16 @@ const { body } = Astro.props;
 
 <section class="current">
     <div class="row">
-        <span class="section-header">Amount Per Serving</span>
-        <span class="amount-header">% Focus</span>
+        <span class="section-header">About Me</span>
+        <!-- <span class="amount-header">me</span> -->
     </div>
-    <p class="current__body">
-        {body ? body : <slot />}
-    </p>
+    {
+        body ? (
+            <p class="current__body current__body--plain">{body}</p>
+        ) : (
+            <div class="current__body">
+                <slot />
+            </div>
+        )
+    }
 </section>

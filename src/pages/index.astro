@@ -7,42 +7,80 @@ import ExperienceRow from "../components/ExperienceRow.astro";
 import Skills from "../components/Skills.astro";
 import FooterNote from "../components/FooterNote.astro";
 
+// TODO: set to your live Birdguessr URL (GitHub Pages, Vercel, etc.)
+const birdguessrUrl = "https://guessbirdbysong.netlify.app";
+
+/** Optional `orgHref` turns the org name into a link. */
+interface ExperienceEntry {
+    org: string;
+    meta: string;
+    bullets: string[];
+    orgHref?: string;
+}
+
 // TODO: swap "1 human" for actual age, e.g. "1 human (22 yrs)"
 const servingSize = "1 human";
 
 // TODO: short phrase about what you're currently doing
-const calories = "Building things at NUS";
+const calories = "CS @ NUS";
 
-// TODO: 2-3 line paragraph about what you're working on right now
-const currentBody =
-    "Computer science student at the National University of Singapore, mostly poking at systems-y problems and the occasional web app. Currently rebuilding this site and chipping away at side projects in Rust and TypeScript.";
-
-// TODO: replace with real experiences
-const experiences = [
+const workExperiences: ExperienceEntry[] = [
     {
-        org: "National University of Singapore",
-        meta: "B.Comp. Sci · 2024–",
-        bullets: [
-            "Coursework across systems, algorithms, and software engineering.",
-            "TODO: add a notable project, club, or research role.",
-        ],
+        org: "TikTok / ByteDance",
+        meta: "Software Engineering Intern · 2025",
+        bullets: [],
+        orgHref: "https://www.bytedance.com/en/",
     },
     {
-        org: "Side Projects",
-        meta: "Solo · 2025–",
+        org: "Hypotenuse AI",
+        meta: "Software Engineering Intern · 2025",
+        bullets: [],
+        orgHref: "https://hypotenuse.ai/",
+    },
+    {
+        org: "GovTech",
+        meta: "Software Engineering Intern · 2024",
+        bullets: [],
+        orgHref: "https://www.tech.gov.sg",
+    },
+    {
+        org: "Digital and Intelligence Service",
+        meta: "Software Engineer (Conscript) · 2021–2023",
+        bullets: [],
+        orgHref: "https://www.dis.gov.sg/",
+    },
+    {
+        org: "DSTA",
+        meta: "Intern · 2021",
+        bullets: [],
+        orgHref: "https://www.dsta.gov.sg/",
+    },
+];
+
+const nusExperiences: ExperienceEntry[] = [
+    {
+        org: "NUS Hackers",
+        meta: "Coreteam Member",
+        bullets: [],
+        orgHref: "https://www.nushackers.org/",
+    },
+    {
+        org: "Teaching Assistant (School of Computing)",
+        meta: "NUS",
         bullets: [
-            "Building small tools in Rust and TypeScript to learn out loud.",
-            "TODO: link to a project you'd want to highlight.",
+            "Data Structures & Algorithms (twice)",
+            "Introduction to Programming",
+            "Introduction to Operating Systems (Lab)",
         ],
     },
 ];
 
 // TODO: tweak skill list and percentages
 const skills = [
-    { name: "Rust", pct: 70 },
-    { name: "React", pct: 60 },
-    { name: "Systems", pct: 80 },
-    { name: "TypeScript", pct: 75 },
+    // { name: "Rust", pct: 70 },
+    // { name: "React", pct: 60 },
+    // { name: "Systems", pct: 80 },
+    // { name: "TypeScript", pct: 75 },
 ];
 
 // TODO: swap "#" for actual GitHub / LinkedIn / email URLs
@@ -66,22 +104,50 @@ const footerText =
             calories={calories}
         />
         <div class="rule-thick"></div>
-        <Current body={currentBody} />
+        <Current>
+            <p>
+                Hi, I'm Jun Yu. I'm a rising final year computer science student
+                at the National University of Singapore. I find myself drawn to
+                systems-y problems, finding out how databases, operating systems
+                work under the hood.
+            </p>
+            <p>
+                Outside of CS, I've been developing a growing interest in
+                wildlife and biodiversity, which is what led me to build
+                <a href={birdguessrUrl}>BirdGuessr</a>. I also enjoy learning
+                about metaphysics and philosophy, and I'm currently reading
+                <a href={"https://en.wikipedia.org/wiki/A_Brief_History_of_Time"}>A Brief History of Time</a>.
+            </p>
+        </Current>
         <div class="rule-thick"></div>
-        <Experience>
+        <Experience heading="Experience">
             {
-                experiences.map((exp) => (
+                workExperiences.map((exp) => (
                     <ExperienceRow
                         org={exp.org}
                         meta={exp.meta}
                         bullets={exp.bullets}
+                        orgHref={exp.orgHref}
+                    />
+                ))
+            }
+        </Experience>
+        <div class="rule-thick"></div>
+        <Experience heading="NUS" rightLabel="Role">
+            {
+                nusExperiences.map((exp) => (
+                    <ExperienceRow
+                        org={exp.org}
+                        meta={exp.meta}
+                        bullets={exp.bullets}
+                        orgHref={exp.orgHref}
                     />
                 ))
             }
         </Experience>
         <div class="rule-medium"></div>
-        <Skills items={skills} links={links} />
-        <div class="rule-medium"></div>
+        <!-- <Skills items={skills} links={links} />
+        <div class="rule-medium"></div> -->
         <FooterNote text={footerText} />
     </main>
 </Layout>

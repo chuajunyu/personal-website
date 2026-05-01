@@ -3,14 +3,24 @@ interface Props {
     org: string;
     meta: string;
     bullets?: string[];
+    /** When set, the organization name links here (same tab). */
+    orgHref?: string;
 }
 
-const { org, meta, bullets = [] } = Astro.props;
+const { org, meta, bullets = [], orgHref } = Astro.props;
 ---
 
 <div class="exp-row">
     <div class="exp-row__head">
-        <span class="exp-row__org">{org}</span>
+        <span class="exp-row__org">
+            {
+                orgHref ? (
+                    <a href={orgHref} class="exp-row__org-link">{org}</a>
+                ) : (
+                    org
+                )
+            }
+        </span>
         <span class="exp-row__meta">{meta}</span>
     </div>
     {
