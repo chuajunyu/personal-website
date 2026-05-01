@@ -4,7 +4,7 @@ import Hero from "../components/Hero.astro";
 import Current from "../components/Current.astro";
 import Experience from "../components/Experience.astro";
 import ExperienceRow from "../components/ExperienceRow.astro";
-import Skills from "../components/Skills.astro";
+import Contact from "../components/Contact.astro";
 import FooterNote from "../components/FooterNote.astro";
 
 // TODO: set to your live Birdguessr URL (GitHub Pages, Vercel, etc.)
@@ -49,12 +49,6 @@ const workExperiences: ExperienceEntry[] = [
         bullets: [],
         orgHref: "https://www.dis.gov.sg/",
     },
-    {
-        org: "DSTA",
-        meta: "Intern · 2021",
-        bullets: [],
-        orgHref: "https://www.dsta.gov.sg/",
-    },
 ];
 
 const nusExperiences: ExperienceEntry[] = [
@@ -75,24 +69,14 @@ const nusExperiences: ExperienceEntry[] = [
     },
 ];
 
-// TODO: tweak skill list and percentages
-const skills = [
-    // { name: "Rust", pct: 70 },
-    // { name: "React", pct: 60 },
-    // { name: "Systems", pct: 80 },
-    // { name: "TypeScript", pct: 75 },
+// TODO: replace with your real GitHub and LinkedIn URLs
+const contactLinks = [
+    { label: "GitHub", href: "https://github.com/chuajunyu" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/chua-jun-yu/" },
 ];
 
-// TODO: swap "#" for actual GitHub / LinkedIn / email URLs
-const links = [
-    { label: "GitHub", href: "#" },
-    { label: "LinkedIn", href: "#" },
-    { label: "Email", href: "#" },
-];
-
-// TODO: tweak footer disclaimer to taste
-const footerText =
-    "* Percent Daily Values are based on caffeine intake and curiosity. Individual results may vary.";
+// TODO: replace with your obfuscated address (plain text, not a mailto link)
+const footerText = "Reach me at chuajunyu1 [at] gmail.com.";
 ---
 
 <Layout title="Chua Jun Yu — Personal Facts">
@@ -146,8 +130,8 @@ const footerText =
             }
         </Experience>
         <div class="rule-medium"></div>
-        <!-- <Skills items={skills} links={links} />
-        <div class="rule-medium"></div> -->
+        <Contact links={contactLinks} />
+        <div class="rule-medium"></div>
         <FooterNote text={footerText} />
     </main>
 </Layout>

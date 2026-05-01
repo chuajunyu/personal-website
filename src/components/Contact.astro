@@ -1,0 +1,25 @@
+---
+export interface ContactLink {
+    label: string;
+    href: string;
+}
+
+interface Props {
+    links: ContactLink[];
+}
+
+const { links } = Astro.props;
+---
+
+<section class="skills">
+    <p class="skills__links skills__links--solo">
+        {
+            links.map((link, idx) => (
+                <>
+                    {idx > 0 && <span aria-hidden="true"> · </span>}
+                    <a href={link.href}>{link.label}</a>
+                </>
+            ))
+        }
+    </p>
+</section>

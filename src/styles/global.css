@@ -261,16 +261,6 @@ a:focus-visible {
     border-bottom: 1px solid #000;
 }
 
-.skills__list {
-    margin-top: 8px;
-    font-size: 1rem;
-    line-height: 1.55;
-}
-
-.skills__list .pct {
-    font-weight: 800;
-}
-
 .skills__links {
     margin-top: 8px;
     padding-top: 6px;
@@ -282,6 +272,12 @@ a:focus-visible {
     text-transform: uppercase;
     letter-spacing: 0.02em;
     font-weight: 700;
+}
+
+.skills__links--solo {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 .footer-note {
