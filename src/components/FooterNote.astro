@@ -1,11 +1,13 @@
 ---
 interface Props {
     text: string;
+    lastUpdated?: string;
 }
 
-const { text } = Astro.props;
+const { text, lastUpdated = "May 2026" } = Astro.props;
 ---
 
 <footer>
     <p class="footer-note">{text}</p>
+    <p class="footer-note footer-note--updated">** Last updated on {lastUpdated}</p>
 </footer>

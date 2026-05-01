@@ -221,6 +221,11 @@ a:focus-visible {
     line-height: 1.4;
 }
 
+.footer-note--updated {
+    margin-top: 2px;
+    font-size: 0.72rem;
+}
+
 @media (max-width: 480px) {
     html {
         font-size: 106.25%;
@@ -248,5 +253,9 @@ a:focus-visible {
 
     .footer-note {
         font-size: 0.78rem;
+    }
+
+    .footer-note--updated {
+        font-size: 0.7rem;
     }
 }
