@@ -1,5 +1,5 @@
 ---
-export interface ContactLink {
+interface ContactLink {
     label: string;
     href: string;
 }
@@ -11,8 +11,8 @@ interface Props {
 const { links } = Astro.props;
 ---
 
-<section class="skills">
-    <p class="skills__links skills__links--solo">
+<section class="contact">
+    <p class="contact__links">
         {
             links.map((link, idx) => (
                 <>

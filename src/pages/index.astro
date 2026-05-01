@@ -7,46 +7,37 @@ import ExperienceRow from "../components/ExperienceRow.astro";
 import Contact from "../components/Contact.astro";
 import FooterNote from "../components/FooterNote.astro";
 
-// TODO: set to your live Birdguessr URL (GitHub Pages, Vercel, etc.)
 const birdguessrUrl = "https://guessbirdbysong.netlify.app";
 
-/** Optional `orgHref` turns the org name into a link. */
 interface ExperienceEntry {
     org: string;
     meta: string;
-    bullets: string[];
+    bullets?: string[];
     orgHref?: string;
 }
 
-// TODO: swap "1 human" for actual age, e.g. "1 human (22 yrs)"
 const servingSize = "1 human";
-
-// TODO: short phrase about what you're currently doing
 const calories = "CS @ NUS";
 
 const workExperiences: ExperienceEntry[] = [
     {
         org: "TikTok / ByteDance",
         meta: "Software Engineering Intern · 2025",
-        bullets: [],
         orgHref: "https://www.bytedance.com/en/",
     },
     {
         org: "Hypotenuse AI",
         meta: "Software Engineering Intern · 2025",
-        bullets: [],
         orgHref: "https://hypotenuse.ai/",
     },
     {
         org: "GovTech",
         meta: "Software Engineering Intern · 2024",
-        bullets: [],
         orgHref: "https://www.tech.gov.sg",
     },
     {
         org: "Digital and Intelligence Service",
         meta: "Software Engineer (Conscript) · 2021–2023",
-        bullets: [],
         orgHref: "https://www.dis.gov.sg/",
     },
 ];
@@ -55,7 +46,6 @@ const nusExperiences: ExperienceEntry[] = [
     {
         org: "NUS Hackers",
         meta: "Coreteam Member",
-        bullets: [],
         orgHref: "https://www.nushackers.org/",
     },
     {
@@ -69,13 +59,11 @@ const nusExperiences: ExperienceEntry[] = [
     },
 ];
 
-// TODO: replace with your real GitHub and LinkedIn URLs
 const contactLinks = [
     { label: "GitHub", href: "https://github.com/chuajunyu" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/chua-jun-yu/" },
 ];
 
-// TODO: replace with your obfuscated address (plain text, not a mailto link)
 const footerText = "* Reach me at chuajunyu1 [at] gmail.com.";
 ---
 
@@ -90,17 +78,19 @@ const footerText = "* Reach me at chuajunyu1 [at] gmail.com.";
         <div class="rule-thick"></div>
         <Current>
             <p>
-                Hi, I'm Jun Yu. I'm a rising final year computer science student
-                at the National University of Singapore. I find myself drawn to
-                systems-y problems, finding out how databases, operating systems
-                work under the hood.
+                Hi, I'm Jun Yu. I'm a computer science student
+                at the National University of Singapore. Recently,
+                I've been learning more about databases, operating systems
+                and how they work under the hood.
             </p>
             <p>
-                Outside of CS, I've been developing a growing interest in
+                Recently, I've been developing a growing interest in
                 wildlife and biodiversity, which is what led me to build
                 <a href={birdguessrUrl}>BirdGuessr</a>. I also enjoy learning
                 about metaphysics and philosophy, and I'm currently reading
-                <a href={"https://en.wikipedia.org/wiki/A_Brief_History_of_Time"}>A Brief History of Time</a>.
+                <a href="https://en.wikipedia.org/wiki/A_Brief_History_of_Time"
+                    >A Brief History of Time</a
+                >.
             </p>
         </Current>
         <div class="rule-thick"></div>

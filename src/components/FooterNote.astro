@@ -1,11 +1,9 @@
 ---
 interface Props {
-    text?: string;
+    text: string;
 }
 
-const {
-    text = "* Reach me at chuajunyu1 [at] gmail.com.",
-} = Astro.props;
+const { text } = Astro.props;
 ---
 
 <footer>
