@@ -175,12 +175,16 @@ a:focus-visible {
 }
 
 .exp-row__head {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: baseline;
-    gap: 12px;
+    column-gap: 12px;
     font-weight: 800;
     font-size: 1.05rem;
+}
+
+.exp-row__org {
+    min-width: 0;
 }
 
 .exp-row__meta {
@@ -188,6 +192,7 @@ a:focus-visible {
     font-size: 0.93rem;
     text-align: right;
     white-space: nowrap;
+    justify-self: end;
 }
 
 .exp-row__bullets {
