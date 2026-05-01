@@ -1,0 +1,17 @@
+---
+interface Props {
+    body?: string;
+}
+
+const { body } = Astro.props;
+---
+
+<section class="current">
+    <div class="row">
+        <span class="section-header">Amount Per Serving</span>
+        <span class="amount-header">% Focus</span>
+    </div>
+    <p class="current__body">
+        {body ? body : <slot />}
+    </p>
+</section>

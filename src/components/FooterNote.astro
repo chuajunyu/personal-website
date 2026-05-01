@@ -1,0 +1,13 @@
+---
+interface Props {
+    text?: string;
+}
+
+const {
+    text = "* Percent Daily Values are based on caffeine intake and curiosity. Individual results may vary.",
+} = Astro.props;
+---
+
+<footer>
+    <p class="footer-note">{text}</p>
+</footer>

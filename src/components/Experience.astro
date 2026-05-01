@@ -1,0 +1,16 @@
+---
+interface Props {
+    heading?: string;
+    rightLabel?: string;
+}
+
+const { heading = "Experience", rightLabel = "Role / Years" } = Astro.props;
+---
+
+<section class="experience">
+    <div class="experience__header">
+        <span>{heading}</span>
+        <span class="right">{rightLabel}</span>
+    </div>
+    <slot />
+</section>

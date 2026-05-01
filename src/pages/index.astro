@@ -1,23 +1,87 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Current from "../components/Current.astro";
+import Experience from "../components/Experience.astro";
+import ExperienceRow from "../components/ExperienceRow.astro";
+import Skills from "../components/Skills.astro";
+import FooterNote from "../components/FooterNote.astro";
 
+// TODO: swap "1 human" for actual age, e.g. "1 human (22 yrs)"
+const servingSize = "1 human";
+
+// TODO: short phrase about what you're currently doing
+const calories = "Building things at NUS";
+
+// TODO: 2-3 line paragraph about what you're working on right now
+const currentBody =
+    "Computer science student at the National University of Singapore, mostly poking at systems-y problems and the occasional web app. Currently rebuilding this site and chipping away at side projects in Rust and TypeScript.";
+
+// TODO: replace with real experiences
+const experiences = [
+    {
+        org: "National University of Singapore",
+        meta: "B.Comp. Sci · 2024–",
+        bullets: [
+            "Coursework across systems, algorithms, and software engineering.",
+            "TODO: add a notable project, club, or research role.",
+        ],
+    },
+    {
+        org: "Side Projects",
+        meta: "Solo · 2025–",
+        bullets: [
+            "Building small tools in Rust and TypeScript to learn out loud.",
+            "TODO: link to a project you'd want to highlight.",
+        ],
+    },
+];
+
+// TODO: tweak skill list and percentages
+const skills = [
+    { name: "Rust", pct: 70 },
+    { name: "React", pct: 60 },
+    { name: "Systems", pct: 80 },
+    { name: "TypeScript", pct: 75 },
+];
+
+// TODO: swap "#" for actual GitHub / LinkedIn / email URLs
+const links = [
+    { label: "GitHub", href: "#" },
+    { label: "LinkedIn", href: "#" },
+    { label: "Email", href: "#" },
+];
+
+// TODO: tweak footer disclaimer to taste
+const footerText =
+    "* Percent Daily Values are based on caffeine intake and curiosity. Individual results may vary.";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Chua Jun Yu</title>
-    </head>
-    <body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <h1>Chua Jun Yu</h1>
-        <h2>
-            I'm currently building out this site with <a
-                href="https://astro.build/">Astro</a
-            >! Come back soon for more updates!
-        </h2>
-    </body>
-</html>
+<Layout title="Chua Jun Yu — Personal Facts">
+    <main class="label">
+        <Hero
+            name="Chua Jun Yu"
+            subheading="Personal Facts"
+            servingSize={servingSize}
+            calories={calories}
+        />
+        <div class="rule-thick"></div>
+        <Current body={currentBody} />
+        <div class="rule-thick"></div>
+        <Experience>
+            {
+                experiences.map((exp) => (
+                    <ExperienceRow
+                        org={exp.org}
+                        meta={exp.meta}
+                        bullets={exp.bullets}
+                    />
+                ))
+            }
+        </Experience>
+        <div class="rule-medium"></div>
+        <Skills items={skills} links={links} />
+        <div class="rule-medium"></div>
+        <FooterNote text={footerText} />
+    </main>
+</Layout>

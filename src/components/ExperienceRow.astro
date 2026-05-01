@@ -1,0 +1,25 @@
+---
+interface Props {
+    org: string;
+    meta: string;
+    bullets?: string[];
+}
+
+const { org, meta, bullets = [] } = Astro.props;
+---
+
+<div class="exp-row">
+    <div class="exp-row__head">
+        <span class="exp-row__org">{org}</span>
+        <span class="exp-row__meta">{meta}</span>
+    </div>
+    {
+        bullets.length > 0 && (
+            <ul class="exp-row__bullets">
+                {bullets.map((bullet) => (
+                    <li>{bullet}</li>
+                ))}
+            </ul>
+        )
+    }
+</div>

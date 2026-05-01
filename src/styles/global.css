@@ -1,0 +1,292 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: #fff;
+    color: #000;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: Helvetica, Arial, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    font-stretch: 85%;
+    font-variant-numeric: tabular-nums;
+    padding: 32px 16px 48px;
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    color: #000;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+a:hover,
+a:focus-visible {
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+}
+
+.label {
+    width: 100%;
+    max-width: 520px;
+    background: #fff;
+    border: 2px solid #000;
+    padding: 14px 18px 18px;
+}
+
+.rule-thick {
+    border-top: 10px solid #000;
+    margin: 10px 0;
+}
+
+.rule-medium {
+    border-top: 4px solid #000;
+    margin: 8px 0;
+}
+
+.rule-thin {
+    border-top: 1px solid #000;
+    margin: 6px 0;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.row > .label-text {
+    text-align: left;
+}
+
+.row > .value-text {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.section-header {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+}
+
+.hero {
+    padding-bottom: 4px;
+}
+
+.hero__name {
+    margin: 0;
+    font-size: clamp(2.25rem, 8vw, 3rem);
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.hero__subheading {
+    margin: 4px 0 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+.hero__serving {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.calories-row {
+    border-top: 6px solid #000;
+    border-bottom: 1px solid #000;
+    margin-top: 8px;
+    padding: 6px 0 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.calories-row__label {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+}
+
+.calories-row__value {
+    font-weight: 900;
+    font-size: 1.15rem;
+    text-align: right;
+    text-transform: none;
+}
+
+.amount-header {
+    text-align: right;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #000;
+}
+
+.current__body {
+    margin-top: 8px;
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+.experience__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #000;
+}
+
+.experience__header .right {
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.exp-row {
+    padding: 6px 0;
+}
+
+.exp-row + .exp-row {
+    border-top: 1px solid #000;
+}
+
+.exp-row__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    font-weight: 800;
+    font-size: 0.98rem;
+}
+
+.exp-row__meta {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.exp-row__bullets {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 0 0 0 1.25rem;
+}
+
+.exp-row__bullets li {
+    position: relative;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    padding: 1px 0;
+}
+
+.exp-row__bullets li::before {
+    content: "—";
+    position: absolute;
+    left: -1.1rem;
+}
+
+.skills__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #000;
+}
+
+.skills__list {
+    margin-top: 8px;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.skills__list .pct {
+    font-weight: 800;
+}
+
+.skills__links {
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #000;
+    font-size: 0.85rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-weight: 700;
+}
+
+.footer-note {
+    margin-top: 6px;
+    font-size: 0.72rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 16px 10px 32px;
+        font-size: 15px;
+    }
+
+    .label {
+        padding: 12px 14px 14px;
+    }
+
+    .hero__subheading {
+        font-size: 1.25rem;
+    }
+
+    .calories-row__label {
+        font-size: 0.95rem;
+    }
+
+    .calories-row__value {
+        font-size: 1rem;
+    }
+
+    .footer-note {
+        font-size: 0.7rem;
+    }
+}
